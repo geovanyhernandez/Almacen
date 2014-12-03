@@ -1,11 +1,15 @@
 public class Dirección {
 
+	private String direccion;
 	private String pais;
  	private String calle;
  	private String portal;
  	private int numeroPortal;
  	private String puerta;
 
+ 	public void setDireccion(String direccion){
+ 		this.direccion=direccion;
+ 	}
  	public void setPais(String pais){
  		this.pais=pais;
  	}
@@ -23,6 +27,9 @@ public class Dirección {
  	}
 
  	//get//
+ 	public String getDireccion(){
+ 		return direccion;
+ 	}
  	public String getPais(){
  		return pais;
  	}
