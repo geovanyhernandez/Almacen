@@ -1,42 +1,58 @@
 import java.io.IOException;
 import java.io.FileReader;
 import java.io.BufferedReader;
-import java.io.ArrayList;
+import java.util.ArrayList;
 
 public class Main{
 
 	public  static void main(String[] args)throws IOException {
 
-		 FileReader fr = new FileReader("recetario.txt");
+		 FileReader fr = new FileReader("distribuidores.txt");
 		 BufferedReader br = new BufferedReader(fr); 
-		 String [] campos = null;
+		 String [] campo = null;
 
 		 System.out.println("distribuidores:");
 		 String a;
 
-		 ArrayList<Distribuidor>distrubuidor:new ArrayList<Distribuidor>();
-		 while (a = br.readline() !=null) {
+		 ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
+			
 
-		 	Distribuidor distribuidor = new Distribuidor();
-		 	Direccion direccion = new Direccion();
-		 	Contacto contacto = Contacto();
+		  while((a = br.readLine()) !=null) {
+		  
 
-		 	campo = a.split(",");
+			 	Distribuidor distribuidor = new Distribuidor();
+			 	Direccion direccion = new Direccion();
+			 	Contacto contacto = new  Contacto();
 
-		 	distribuidor.setNombre(campo[0]);
-		 	distribuidor.setCIF(campo[1]);
+			 	campo = a.split(",");
+
+			 	distribuidor.setNombre(campo[0]);
+			 	distribuidor.setCIF(campo[1]);
+			 	
+			 	direccion.setDireccion(campo[2]);
+
+			 	contacto.setMovil(Integer.parseInt(campo[3]));
+
+			 	distribuidor.setDireccion(direccion);
+			 	distribuidor.setPersonaContacto(contacto);
+
+
+			 	distri.add(distribuidor);
 		 	
-		 	direccion.setDireccion(campo[2]);
+		 	}
+		 for (int b=0; b<distri.size(); b++) {
+		 	System.out.println("--------------------------------");	
+		 	System.out.println("Nombre "+distri.get(b).getNombre());	
+		 	System.out.println("CIF "+distri.get(b).getCIF());
+		 
+		 	System.out.println("direccion "+distri.get(b).getDireccion().getDireccion());
+			System.out.println("movil "     +distri.get(b).getPersonaContacto().getMovil());
 
-		 	contacto.setMovil(campo[3]);
 
 		 	
 		 }
 
 
-
-
-
-
+		 distri.clear();
 	}
 }
