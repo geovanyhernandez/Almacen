@@ -54,9 +54,6 @@ public class Main{
 		 }
 
 
-		 distri.clear();
-
-		   
 
 		  ArrayList <String>distribmanza= new ArrayList <String>();
 		  ArrayList <String>distrilechu= new ArrayList <String>();
@@ -65,8 +62,6 @@ public class Main{
 		  ArrayList <Manzana>manza = new ArrayList <Manzana>();
 		 
 		 
-
-
 
 		 Scanner sc = new sc Scanner(System.in);
 		 System.out.println(" manzanas ");
@@ -139,19 +134,23 @@ public class Main{
 
 		 	System.out.println("distribuidor de leche");
 		 	String distrileche= sc.next();
+		 	
+		 	for (int p=0; p<lech; p++)
+		 	if(distrileche.equalsIgnoreCase=(distrileche.get(p)getNombre()) ){
+		 		leche.setDistribuidor(distrileche.get(p));
+		 	}
 
-		 	add.distrilech(distrileche);
-		 	add.leche(lech);
-
-		  	
 		}
+		lech.add(leche);
+		
 
-	 System.out:println("****manzanas****")
-	  	 for (; ; ) {
+	/* System.out:println("****manzanas****")
+	  	 for (int m=0; m<manza.size() m++; ) {
+	  	 	System.out.println(" ")
 	  	
 	  	}
+*/
 
-
-
+	 distri.clear();
 	}
 }
