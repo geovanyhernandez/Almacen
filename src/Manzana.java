@@ -32,7 +32,7 @@ public class Manzana{
 	public String getColor(){
 		return color;
 	}
-	public Double getEuroskilo(){
+	public Double getEurosKilo(){
 		return eurosKilo;
 	}
 	public Distribuidor getDistribuidor(){

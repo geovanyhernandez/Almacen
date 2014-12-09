@@ -12,10 +12,10 @@ public class Leche {
     public void setProcedencia(String procedencia){
     	this.procedencia=procedencia;
     }
-    public void setEurosLitro(String eurosLitro){
+    public void setEurosLitro(Double eurosLitro){
     	this.eurosLitro=eurosLitro;  	
     }
-    public void setDistribuidor(String distribuidor){
+    public void setDistribuidor(Distribuidor distribuidor){
     	this.distribuidor=distribuidor;
     }
     //get//

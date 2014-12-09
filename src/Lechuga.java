@@ -19,7 +19,7 @@ public class Lechuga {
 	public void setEurosUnidad(Double eurosUnidad){
 		this.eurosUnidad=eurosUnidad;
 	}
-	public void setDistribuidor(Double distribuidor){
+	public void setDistribuidor(Distribuidor distribuidor){
 		this.distribuidor=distribuidor;
 	}
 
