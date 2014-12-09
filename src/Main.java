@@ -47,6 +47,7 @@ public class Main{
 		 }
 
 
+
 		// distri.clear(); //comienza la segunda parte
 
 
@@ -56,6 +57,7 @@ public class Main{
 
 	  	  //manzana
 	     ArrayList <Manzana>manza = new ArrayList <Manzana>();
+
 		 System.out.println(" manzanas ");
 	     
 	     for (int c=0; c<1; c++) {
@@ -137,6 +139,7 @@ public class Main{
 
 			 	System.out.println("procedencia de leche");
 			 	leche.setProcedencia(sc.next());
+
 
 			 	System.out.println("a cuantos euros el litro");
 			 	leche.setEurosLitro(sc.nextDouble());
