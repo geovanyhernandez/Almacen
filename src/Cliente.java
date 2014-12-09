@@ -3,7 +3,7 @@ public class Cliente {
     private String nombre;
     private String apellidos;
     private String DNI;
-    private Dirección dirección;
+    private Direccion direccion;
     private Double num_socio;
     private Double dto;
     
@@ -41,8 +41,9 @@ public class Cliente {
         return direccion;
     }
     public Double getNum_socio(){
-        return num_socio
+        return num_socio;
     }
     public Double getDto(){
         return dto;
     }
+}
