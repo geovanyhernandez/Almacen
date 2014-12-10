@@ -50,11 +50,9 @@ public class Main{
 
 		// distri.clear(); //comienza la segunda parte
 
-
 		  Scanner sc = new Scanner(System.in);
 	  	  System.out.println("\n informacion  productos");
 	  	 
-
 	  	  //manzana
 	     ArrayList <Manzana>manza = new ArrayList <Manzana>();
 
@@ -81,7 +79,8 @@ public class Main{
 			 	distribu.setNombre(distr);
 
 			 	for (int d=0; d<distri.size();  d++) {
-			 		if (distr.equalsIgnoreCase(distri.get(d).getNombre()));{
+			 		String distri_array=distri.get(d).getNombre();
+			 		if (distr.equalsIgnoreCase(distri_array)){
 			 			manzana.setDistribuidor(distri.get(d));
 			 		
 			 		}
@@ -117,14 +116,14 @@ public class Main{
 		 	    distribuidor.setNombre(distr);
 
 		 	    for (int d=0; d<distri.size();  d++) {
-			 		if (distr.equalsIgnoreCase(distri.get(d).getNombre()));{
+			 		String distri_array=distri.get(d).getNombre();
+			 		if (distr.equalsIgnoreCase(distri_array)){
 			 			lechuga.setDistribuidor(distri.get(d));
+			 		}
+
 		 	    	}
 		 	    	lechu.add(lechuga);	
 		 	   } 	
-
-		   	
-		   }
 
 		ArrayList <Leche>lech = new ArrayList <Leche>();
 		  System.out.println(" Leche ");
@@ -149,13 +148,15 @@ public class Main{
 			 	distribuidor.setNombre(distr);
 
 			 	for (int d=0; d<distri.size();  d++) {
-				 		if (distr.equalsIgnoreCase(distri.get(d).getNombre()));{
-				 			leche.setDistribuidor(distri.get(d));
+				 		String distri_array=distri.get(d).getNombre();
+			 		if (distr.equalsIgnoreCase(distri_array)){
+			 			leche.setDistribuidor(distri.get(d));
+			 		}
 				 }
 		 	
 			 		lech.add(leche);
 			    }
-		 	}
+		 	
 
 	 		System.out.println("****manzanas****");
 	 		System.out.println("");
