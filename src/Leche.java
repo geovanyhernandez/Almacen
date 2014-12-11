@@ -4,6 +4,7 @@ public class Leche {
 	private String procedencia;
 	private Double eurosLitro;
 	private Distribuidor distribuidor;
+	private int cod_barras;
 
     //set//
     public void setTipo(String tipo){
@@ -18,6 +19,9 @@ public class Leche {
     public void setDistribuidor(Distribuidor distribuidor){
     	this.distribuidor=distribuidor;
     }
+    public void setCod_Barras(int cod_barras){
+        this.cod_barras=cod_barras;
+    }
     //get//
     public String getTipo(){
     	return tipo;
@@ -30,6 +34,9 @@ public class Leche {
     }
     public Distribuidor getDistribuidor(){
     	return distribuidor;
+    }
+    public int getCod_Barras(){
+        return cod_barras;
     }
 
 }

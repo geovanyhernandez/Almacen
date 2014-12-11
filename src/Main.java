@@ -7,7 +7,9 @@ import java.util.Scanner;
 public class Main{
 
 	public  static void main(String[] args)throws IOException {
-
+	
+    	 
+    	 
 		 FileReader fr = new FileReader("distribuidores.txt");
 		 BufferedReader br = new BufferedReader(fr); 
 		 String [] campo = null;
@@ -36,6 +38,8 @@ public class Main{
 			 	distri.add(distribuidor);
 		 	
 		 	}
+		 	
+		 	
 		 for (int b=0; b<distri.size(); b++) {
 		 	System.out.println("--------------------------------");	
 		 	System.out.println("Nombre "+distri.get(b).getNombre());	
@@ -45,15 +49,18 @@ public class Main{
 			System.out.println("movil "     +distri.get(b).getPersonaContacto().getMovil());
 		 	
 		 }
+		
+	
+			
+		 	
+		 	
 
-
-
-		// distri.clear(); //comienza la segunda parte
+		 //comienza la segunda parte
 
 		  Scanner sc = new Scanner(System.in);
-	  	  System.out.println("\n informacion  productos");
+	  	  System.out.println("\n ingresar informacion  productos");
 	  	 
-	  	  //manzana
+	  	  
 	     ArrayList <Manzana>manza = new ArrayList <Manzana>();
 
 		 System.out.println(" manzanas ");
@@ -61,7 +68,8 @@ public class Main{
 	     for (int c=0; c<1; c++) {
 			 	Manzana manzana = new Manzana();
 			 	Distribuidor distribu = new Distribuidor();
-
+			 	
+			 
 			 	System.out.println("tipo de manaza");
 			 	manzana.setTipoManzana(sc.next());
 
@@ -77,7 +85,8 @@ public class Main{
 			 	System.out.println("introduce el nombre del distribuidor");
 			 	String distr = sc.next();
 			 	distribu.setNombre(distr);
-
+			 	
+			 	
 			 	for (int d=0; d<distri.size();  d++) {
 			 		String distri_array=distri.get(d).getNombre();
 			 		if (distr.equalsIgnoreCase(distri_array)){
@@ -85,12 +94,10 @@ public class Main{
 			 		
 			 		}
 			 	}
-		 	
+		
 		 	manza.add(manzana);
 		 }
 		 	
-
-
 		  ArrayList <Lechuga>lechu = new ArrayList <Lechuga>();
 		   System.out.println(" Lechugas ");
 
@@ -122,6 +129,7 @@ public class Main{
 			 		}
 
 		 	    	}
+		 	    	
 		 	    	lechu.add(lechuga);	
 		 	   } 	
 
@@ -153,7 +161,8 @@ public class Main{
 			 			leche.setDistribuidor(distri.get(d));
 			 		}
 				 }
-		 	
+		 	    	int codleche=300;                  		//quinta parte
+		 			leche.setCod_Barras(codleche);         //quinta parte
 			 		lech.add(leche);
 			    }
 		 	
@@ -205,12 +214,56 @@ public class Main{
 		  	 	System.out.println("\ndireccion "        + lech.get(c).getDistribuidor().getDireccion().getDireccion());
 		  	 	System.out.println("\ncontacto movil "   + lech.get(c).getDistribuidor().getPersonaContacto().getMovil());
 		  	 }	
+		  	 
+		  	 //tercera parte 
+			 ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
+		     FileReader fr2 = new FileReader("Clientes.txt");
+		     BufferedReader br2 = new BufferedReader(fr2); 
+		     String [] campo2 = null;
+		     System.out.println("Clientes:");
+		     String a2;
+	 	
+	 	    	 
+		     while((a2 = br2.readLine()) !=null) {
+		     	
+		     	Cliente cliente = new Cliente();
+		     	Direccion direccion = new Direccion();
+		     	
+		     	campo2= a2.split(",");
+		     	
+		     	cliente.setNombre(campo2[0]);
+		        cliente.setApellidos(campo2[1]);
+		        cliente.setDNI(campo2[2]);
+		        direccion.setDireccion(campo2[3]);
+		     	cliente.setNum_socio(Double.parseDouble(campo2[4]));
+		     	cliente.setDto(Double.parseDouble(campo2[5]));
+		     	
+		      	cliente.setDireccion(direccion);
+			 
+
+			 	clien.add(cliente);
+		     }
+		  	 
+		  	  for (int b=0; b<clien.size(); b++) {
+		 	System.out.println("--------------------------------");	
+		 	System.out.println("Nombre "			 +clien.get(b).getNombre());	
+		 	System.out.println("Apellido "			 +clien.get(b).getApellidos());
+		 	System.out.println("Dni " 				 +clien.get(b).getDNI());
+		    System.out.println("direccion "          +clien.get(b).getDireccion().getDireccion());
+		 	System.out.println("Numero de socio "    +clien.get(b).getNum_socio());
+		 	System.out.println("Numero de descuento "+clien.get(b).getDto());
+		 
+		 
+		 	}
+		     
+		  	 
 		  	 //vaciamos los arraylist
 		  	 
 		  	 manza.clear();
 			 lech.clear();
 			 lechu.clear();
 			 distri.clear();
+			 clien.clear();
 
 	}
 }

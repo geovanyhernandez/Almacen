@@ -5,6 +5,7 @@ public class Lechuga {
 	private String color;
 	private Double eurosUnidad;
 	private Distribuidor distribuidor;
+	private int cod_barras;
 
 	//set//
 	public void setTipoLechuga(String tipoLechuga){
@@ -22,6 +23,9 @@ public class Lechuga {
 	public void setDistribuidor(Distribuidor distribuidor){
 		this.distribuidor=distribuidor;
 	}
+	 public void setCod_Barras(int cod_barras){
+        this.cod_barras=cod_barras;
+    }
 
 	//get//
 	public String getTipoLechuga(){
@@ -39,4 +43,7 @@ public class Lechuga {
 	public Distribuidor getDistribuidor(){
 		return distribuidor;
 	}
+	public int getCod_Barras(){
+        return cod_barras;
+    }
 }
