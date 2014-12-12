@@ -8,14 +8,28 @@ public class Main{
 
 	public  static void main(String[] args)throws IOException {
 	
+		
+	
+       	 ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
+       	 ArrayList <Manzana>manza = new ArrayList <Manzana>();
+       	 ArrayList <Leche>lech = new ArrayList <Leche>();
+       	 ArrayList <Lechuga>lechu = new ArrayList <Lechuga>();
+       	 ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
+       	 
+    	 Scanner sc = new Scanner(System.in);
+    	 System.out.println("Nº que desea opcion a realizar : 1-2-3");
+    	 int opcion = sc.nextInt();
     	 
+    	 switch(opcion){
+    	 	
+    	 case 1: 
     	 
 		 FileReader fr = new FileReader("distribuidores.txt");
 		 BufferedReader br = new BufferedReader(fr); 
 		 String [] campo = null;
 		 System.out.println("distribuidores:");
 		 String a;
-		 ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
+		// ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
 			
 		  while((a = br.readLine()) !=null) {
 		  
@@ -50,18 +64,16 @@ public class Main{
 		 	
 		 }
 		
-	
-			
-		 	
-		 	
-
+		break;
+		
+		case 2:	
 		 //comienza la segunda parte
 
-		  Scanner sc = new Scanner(System.in);
+		 
 	  	  System.out.println("\n ingresar informacion  productos");
 	  	 
 	  	  
-	     ArrayList <Manzana>manza = new ArrayList <Manzana>();
+	     //ArrayList <Manzana>manza = new ArrayList <Manzana>();
 
 		 System.out.println(" manzanas ");
 	     
@@ -98,7 +110,7 @@ public class Main{
 		 	manza.add(manzana);
 		 }
 		 	
-		  ArrayList <Lechuga>lechu = new ArrayList <Lechuga>();
+		  //ArrayList <Lechuga>lechu = new ArrayList <Lechuga>();
 		   System.out.println(" Lechugas ");
 
 		   for (int e=0; e<1; e++) {
@@ -133,7 +145,7 @@ public class Main{
 		 	    	lechu.add(lechuga);	
 		 	   } 	
 
-		ArrayList <Leche>lech = new ArrayList <Leche>();
+		//ArrayList <Leche>lech = new ArrayList <Leche>();
 		  System.out.println(" Leche ");
 
 		  for (int c=0; c<2; c++) {
@@ -214,9 +226,12 @@ public class Main{
 		  	 	System.out.println("\ndireccion "        + lech.get(c).getDistribuidor().getDireccion().getDireccion());
 		  	 	System.out.println("\ncontacto movil "   + lech.get(c).getDistribuidor().getPersonaContacto().getMovil());
 		  	 }	
+		  	 break;
+		  	 
+		  	 case 3:
 		  	 
 		  	 //tercera parte 
-			 ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
+			 //ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
 		     FileReader fr2 = new FileReader("Clientes.txt");
 		     BufferedReader br2 = new BufferedReader(fr2); 
 		     String [] campo2 = null;
@@ -255,15 +270,17 @@ public class Main{
 		 
 		 
 		 	}
-		     
+		    break;
+    	
 		  	 
 		  	 //vaciamos los arraylist
-		  	 
-		  	 manza.clear();
+    	 } 	 
+		  	manza.clear();
 			 lech.clear();
 			 lechu.clear();
 			 distri.clear();
 			 clien.clear();
+    	 
 
 	}
 }
