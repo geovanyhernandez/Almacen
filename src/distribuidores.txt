@@ -1,5 +1,2 @@
-pepe,ABCD,callefin,1111
-mario,JKHM,calleinicio,2222
-pablo,DHTML,calleuna,3333
-fernando,HTMLX,callesucia,4444
-juan,XCVK,calleneutra,5555
+pepe#ABCD#francia,calle1,24,2,a#pablo,hernandez,ya213,60023
+mario#JKHM#francia,calle1,23,3,b#peter,cruz,y2552,862

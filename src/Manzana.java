@@ -4,7 +4,7 @@ public class Manzana{
 	private String color;
 	private Double eurosKilo;
 	private Distribuidor distribuidor;
-	private int cod_barras;
+	
 
 	//set//
 	public void setTipoManzana(String tipoManzana){
@@ -22,9 +22,7 @@ public class Manzana{
 	public void setDistribuidor(Distribuidor distribuidor){
 		this.distribuidor=distribuidor;
 	}
-	 public void setCod_Barras(int cod_barras){
-                 this.cod_barras=cod_barras;
-        }
+	 
 
 	//get//
 	public String getTipoManzana(){
@@ -42,7 +40,5 @@ public class Manzana{
 	public Distribuidor getDistribuidor(){
 		return distribuidor;
 	}
-	public int getCod_Barras(){
-        return cod_barras;
-    }
+	
 }

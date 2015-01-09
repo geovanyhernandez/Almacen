@@ -4,7 +4,7 @@ public class Leche {
 	private String procedencia;
 	private Double eurosLitro;
 	private Distribuidor distribuidor;
-	private int cod_barras;
+	private int cod_barras=200;
 
     //set//
     public void setTipo(String tipo){

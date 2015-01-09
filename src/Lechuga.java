@@ -5,7 +5,7 @@ public class Lechuga {
 	private String color;
 	private Double eurosUnidad;
 	private Distribuidor distribuidor;
-	private int cod_barras;
+	private int cod_barras=300;
 
 	//set//
 	public void setTipoLechuga(String tipoLechuga){

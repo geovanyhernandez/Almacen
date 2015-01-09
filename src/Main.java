@@ -8,28 +8,28 @@ public class Main{
 
 	public  static void main(String[] args)throws IOException {
 	
-		
 	
        	 ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
        	 ArrayList <Manzana>manza = new ArrayList <Manzana>();
        	 ArrayList <Leche>lech = new ArrayList <Leche>();
        	 ArrayList <Lechuga>lechu = new ArrayList <Lechuga>();
        	 ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
+       	 ArrayList <Cesta>cest = new ArrayList <Cesta>(); 
        	 
     	 Scanner sc = new Scanner(System.in);
-    	 System.out.println("Nº que desea opcion a realizar : 1-2-3");
+    	 System.out.println("Nº de opcion a realizar : 1-2-3-4");
     	 int opcion = sc.nextInt();
     	 
-    	 switch(opcion){
-    	 	
-    	 case 1: 
+    	 
     	 
 		 FileReader fr = new FileReader("distribuidores.txt");
 		 BufferedReader br = new BufferedReader(fr); 
-		 String [] campo = null;
-		 System.out.println("distribuidores:");
+	
 		 String a;
-		// ArrayList <Distribuidor>distri = new ArrayList <Distribuidor>();
+		 String [] campo = null;
+		 String [] campo2 = null;
+		 String [] campo3 = null;
+	
 			
 		  while((a = br.readLine()) !=null) {
 		  
@@ -37,31 +37,49 @@ public class Main{
 			 	Direccion direccion       = new Direccion();
 			 	Contacto contacto         = new  Contacto();
 
-			 	campo = a.split(",");
-
-			 	distribuidor.setNombre(campo[0]);
-			 	distribuidor.setCIF(campo[1]);
+			    campo = a.split("#");
 			 	
-			 	direccion.setDireccion(campo[2]);
-
-			 	contacto.setMovil(Integer.parseInt(campo[3]));
-
-			 	distribuidor.setDireccion(direccion);
+			    distribuidor.setNombre(campo[0]);
+			 	distribuidor.setCIF(campo[1]);
+			 
+			 	campo2=campo[2].split(",");
+			    
+			 	direccion.setPais(campo2[0]);
+			    
+			 	direccion.setCalle(campo2[1]);
+			    direccion.setNumeroPortal(Integer.parseInt(campo2[2]));
+			    direccion.setNumeroPiso(Integer.parseInt(campo2[3]));
+			    direccion.setPuerta(campo2[4]);
+			    
+				distribuidor.setDireccion(direccion);  
+			 	campo3=campo[3].split(",");
+			 	
+			 	contacto.setNombre(campo3[0]);
+			 	contacto.setApellido(campo3[1]);
+			 	contacto.setDni(campo3[2]);
+			 	contacto.setMovil(Integer.parseInt(campo3[3]));
+			 	
 			 	distribuidor.setPersonaContacto(contacto);
+			 	
 
 			 	distri.add(distribuidor);
 		 	
+		 	
 		 	}
 		 	
+		 	switch(opcion){
+    	 	
+    	     case 1: 
 		 	
+		 	System.out.println("distribuidores:");
 		 for (int b=0; b<distri.size(); b++) {
 		 	System.out.println("--------------------------------");	
 		 	System.out.println("Nombre "+distri.get(b).getNombre());	
 		 	System.out.println("CIF "+distri.get(b).getCIF());
 		 
-		 	System.out.println("direccion "+distri.get(b).getDireccion().getDireccion());
-			System.out.println("movil "     +distri.get(b).getPersonaContacto().getMovil());
-		 	
+		 	System.out.println("Pais "+distri.get(b).getDireccion().getPais());
+		
+		 
 		 }
 		
 		break;
@@ -193,7 +211,8 @@ public class Main{
 
 		  	 	System.out.println("\ndistribuidor "     + manza.get(m).getDistribuidor().getNombre());
 		  	 	System.out.println("\nCIF "              + manza.get(m).getDistribuidor().getCIF());
-		  	 	System.out.println("\ndireccion "        + manza.get(m).getDistribuidor().getDireccion().getDireccion());
+		  	 	System.out.println("\npais "        + manza.get(m).getDistribuidor().getDireccion().getPais());
+		  
 		  	 	System.out.println("\ncontacto movil "   + manza.get(m).getDistribuidor().getPersonaContacto().getMovil());
 
 	  		}
@@ -209,7 +228,7 @@ public class Main{
 
 		  	 	System.out.println("\ndistribuidor "     + lechu.get(b).getDistribuidor().getNombre());
 		  	 	System.out.println("\nCIF "              + lechu.get(b).getDistribuidor().getCIF());
-		  	 	System.out.println("\ndireccion "        + lechu.get(b).getDistribuidor().getDireccion().getDireccion());
+		  	    System.out.println("\ndireccion "        + lechu.get(b).getDistribuidor().getDireccion().getPais());
 		  	 	System.out.println("\ncontacto movil "   + lechu.get(b).getDistribuidor().getPersonaContacto().getMovil());
 		  	 }
 		  	 System.out.println("****Leche****");
@@ -223,7 +242,7 @@ public class Main{
 
 		  	 	System.out.println("\ndistribuidor "     + lech.get(c).getDistribuidor().getNombre());
 		  	 	System.out.println("\nCIF "              + lech.get(c).getDistribuidor().getCIF());
-		  	 	System.out.println("\ndireccion "        + lech.get(c).getDistribuidor().getDireccion().getDireccion());
+		  	    System.out.println("\ndireccion "        + lech.get(c).getDistribuidor().getDireccion().getPais());
 		  	 	System.out.println("\ncontacto movil "   + lech.get(c).getDistribuidor().getPersonaContacto().getMovil());
 		  	 }	
 		  	 break;
@@ -234,7 +253,7 @@ public class Main{
 			 //ArrayList <Cliente>clien = new ArrayList <Cliente>(); 
 		     FileReader fr2 = new FileReader("Clientes.txt");
 		     BufferedReader br2 = new BufferedReader(fr2); 
-		     String [] campo2 = null;
+		     String [] campo4 = null;
 		     System.out.println("Clientes:");
 		     String a2;
 	 	
@@ -243,20 +262,21 @@ public class Main{
 		     	
 		     	Cliente cliente = new Cliente();
 		     	Direccion direccion = new Direccion();
-		     	
-		     	campo2= a2.split(",");
-		     	
-		     	cliente.setNombre(campo2[0]);
-		        cliente.setApellidos(campo2[1]);
-		        cliente.setDNI(campo2[2]);
-		        direccion.setDireccion(campo2[3]);
-		     	cliente.setNum_socio(Double.parseDouble(campo2[4]));
-		     	cliente.setDto(Double.parseDouble(campo2[5]));
-		     	
-		      	cliente.setDireccion(direccion);
+		    
+		     	campo4= a2.split(",");
+		     
+		     	cliente.setNombre(campo4[0]);
+		     	cliente.setApellidos(campo4[1]);
+		        cliente.setDNI(campo4[2]);
+		        //direccion.setDireccion(campo2[3]);//este no va lo cambie por el de abajo
+		        
+		        direccion.setCalle(campo4[3]);//prob
+		        
+		     	cliente.setNum_socio(Double.parseDouble(campo4[4]));
+		     	cliente.setDto(Double.parseDouble(campo4[5]));
+		        cliente.setDireccion(direccion);
 			 
-
-			 	clien.add(cliente);
+			    clien.add(cliente);
 		     }
 		  	 
 		  	  for (int b=0; b<clien.size(); b++) {
@@ -264,7 +284,7 @@ public class Main{
 		 	System.out.println("Nombre "			 +clien.get(b).getNombre());	
 		 	System.out.println("Apellido "			 +clien.get(b).getApellidos());
 		 	System.out.println("Dni " 				 +clien.get(b).getDNI());
-		    System.out.println("direccion "          +clien.get(b).getDireccion().getDireccion());
+		    System.out.println("direccion "          +clien.get(b).getDireccion().getCalle());
 		 	System.out.println("Numero de socio "    +clien.get(b).getNum_socio());
 		 	System.out.println("Numero de descuento "+clien.get(b).getDto());
 		 
@@ -272,14 +292,25 @@ public class Main{
 		 	}
 		    break;
     	
+    		case 4:
+    			System.out.println("cuantos productos desea añadir a la  cesta? ");
+    			int añadir = sc.nextInt();
+    			
+    		    for (int aa=0; aa<añadir; aa++){
+    					System.out.println("inserte el codigo de barra del producto " + (aa+1));
+    					int producto1 = sc.nextInt();
+    				
+    			} 
+		  	 //  System.out.println("inserte el nombre de cliente ");
 		  	 
-		  	 //vaciamos los arraylist
     	 } 	 
-		  	manza.clear();
+    	 //vaciamos los arraylist
+		  	 manza.clear();
 			 lech.clear();
 			 lechu.clear();
 			 distri.clear();
 			 clien.clear();
+			 cest.clear();
     	 
 
 	}

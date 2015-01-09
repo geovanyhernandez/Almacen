@@ -19,9 +19,9 @@ public class Cesta {
     public void setLeche(ArrayList<Leche>leche){
         this.leche=leche;
     }
-    public void setCalcular(double calcular){
+   /* public void setCalcular(double calcular){
         this.calcular=calcular;
-    }    
+    }*/    
     
     public Cliente getCliente(){
         return cliente;
@@ -35,9 +35,11 @@ public class Cesta {
     public ArrayList<Leche>getLeche(){
         return leche;
     }
-    public double getCalcular(){
+    /*public double getCalcular(){
         return calcular;
-    }
-
+    }*/
+   
+  
+   
 
 }
